@@ -438,7 +438,7 @@ static void thread_cb(void * arg)
 
         do {
             lv_thread_sync_wait(&u->interrupt_signal);
-        } while(u->task_act != NULL);
+        } while(u->task_act == NULL);
 
         post_transfer_tasks(u);
         lv_draw_dispatch_request();
